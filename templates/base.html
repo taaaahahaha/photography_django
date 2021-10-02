@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+    <title>{% block title %}
+
+        {% endblock title %}</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Photography</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-2">
+                    <form action="/awards" method="POST">{% csrf_token %}<button type="submit" class="nav-link active"> Awards </button></form>
+                        {% comment %} <a class="nav-link" href="/awards">Awards</a> {% endcomment %}
+                    </li>
+                    <li class="nav-item mx-2">
+                    <form action="/description" method="POST">{% csrf_token %}<button type="submit" class="nav-link active"> Description </button></form>
+                        {% comment %} <a class="nav-link" href="/description">Description</a> {% endcomment %}
+                    </li>
+                    <li class="nav-item mx-2">
+                        <form action="/main" method="POST">{% csrf_token %}<button type="submit" class="nav-link active"> My Profile </button></form>
+                        {% comment %} <a class="nav-link active" aria-current="page" href="/main">My Profile</a> {% endcomment %}
+                    </li>
+                    <li class="nav-item mx-2">
+                        <form action="/dashboard" method="POST">{% csrf_token %}<button type="submit" class="nav-link active"> My Dashboard </button></form>
+                        {% comment %} <a class="nav-link active" aria-current="page" href="/main">My Profile</a> {% endcomment %}
+                    </li>
+                    <li class="nav-item mx-2">
+                        <form action="/update" method="POST">{% csrf_token %}<button type="submit" class="nav-link active"> Edit </button></form>
+                        {% comment %} <a class="nav-link active" aria-current="page" href="/main">My Profile</a> {% endcomment %}
+                    </li>
+                    <!-- <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Edit Info
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><form action="/update/studio" method="POST">{% csrf_token %}<button type="submit" class="dropdown-item"> Change Studio Name </button></form></li>
+                            <li><form action="/update/address" method="POST">{% csrf_token %}<button type="submit" class="dropdown-item"> Change Postal Address </button></form></li>
+                            <li><form action="/update/price" method="POST">{% csrf_token %}<button type="submit" class="dropdown-item"> Change Price </button></form></li>
+                            <li><form action="/update/email" method="POST">{% csrf_token %}<button type="submit" class="dropdown-item"> Change Email </button></form></li>
+                            <li><form action="/update/password" method="POST">{% csrf_token %}<button type="submit" class="dropdown-item"> Change Password </button></form></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><form action="/update/all" method="POST">{% csrf_token %}<button type="submit" class="dropdown-item"> View all Details </button></form></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+
+    {% endblock body %}
+</body>
+
+</html>
